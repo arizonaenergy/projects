@@ -6,5 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <style>
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #333;
+      height: 90vh;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+    }
+
+    .app-title {
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 80px;
+      opacity: 0.5;
+    }
+
+    .todo-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .todo-item {
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .todo-item span {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 22px;
+    }
+
+    .done span {
+      text-decoration: line-through;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .tick {
+      width: 30px;
+      height: 30px;
+      border: 3px solid #333;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .tick::before {
+      content: "✓";
+      font-size: 20px;
+      display: none;
+    }
+
+    .done .tick::before {
+      display: inline;
+    }
+
+    .delete-todo {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      cursor: pointer;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 3px solid #333;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1 class="title">todos</h1>
+      <ul class="todo-list js-todo-list"></ul>
+
+      <div class="empty-state">
+        <h2 class="empty-state__title">Add your first todo</h2>
+        <p class="empty-state__description">
+          What do you want to get done today?
+        </p>
+      </div>
+
+      <form class="js-form">
+        <input
+          autofocus
+          type="text"
+          aria-label="Enter a new todo item"
+          placeholder="E.g. Build a web app"
+          class="js-todo-input"
+        />
+      </form>
+    </div>
+  </body>
+  <script src="index.js"></script>
 </html>
